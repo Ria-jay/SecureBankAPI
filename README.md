@@ -39,14 +39,22 @@ docker run -d -p 8000:8000 --name securebankapi_container securebankapi
 Visit http://localhost:8000
 
 
+
+
 # API Endpoints
 
-| Method | Endpoint     | Description              |
-|--------|--------------|--------------------------|
-| GET    | `/`          | Welcome message          |
-| POST   | `/register`  | Register a new user      |
-| POST   | `/login`     | Authenticate and get JWT |
-| GET    | `/secure`    | Authenticated user route |
+- GET /
+  Returns a simple welcome message to confirm the API is running.
+
+- POST /register
+  Allows a new user to register with a username, email, and password. Passwords are hashed before storage.
+
+- POST /login
+  Authenticates a registered user and returns a JWT token for session access.
+
+- GET /secure
+  A protected route that only returns a response if a valid JWT token is provided.
+
 
 
 
