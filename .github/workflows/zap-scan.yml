@@ -1,4 +1,4 @@
-name: ZAP Security Scan
+name: ZAP Security Scan With Report
 
 on:
   push:
