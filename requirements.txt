@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+passlib[bcrypt]
+python-jose
+email-validator
+slowapi
+python-multipart
+requests
