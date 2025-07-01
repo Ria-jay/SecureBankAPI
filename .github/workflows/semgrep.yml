@@ -3,7 +3,6 @@ name: Semgrep Scan
 
 
 on:
-
   push:
     branches: [ main ]
   pull_request:
@@ -12,7 +11,6 @@ on:
 
 
 jobs:
-
   semgrep:
     name: Run Semgrep
     runs-on: ubuntu-latest
@@ -20,18 +18,17 @@ jobs:
 
 
     steps:
-
-      name: Checkout code
+    - name: Checkout code
       uses: actions/checkout@v3
 
-      name: Set up Python
+    - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.11'
 
-      name: Install Semgrep
+    - name: Install Semgrep
       run: pip install semgrep
 
-      name: Run Semgrep scan
+    - name: Run Semgrep scan
       run: semgrep scan --config auto
 
