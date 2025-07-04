@@ -1,0 +1,11 @@
+{
+  "streams": [{
+    "stream": {
+      "job": "test"
+    },
+    "values": [
+      [ "1751560003701397513", "hello from Loki test log" ]
+    ]
+  }]
+}
+

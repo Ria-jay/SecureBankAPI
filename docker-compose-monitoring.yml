@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  loki:
+    image: grafana/loki:2.9.2
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+    restart: always
+
+  promtail:
+    image: grafana/promtail:2.9.2
+    volumes:
+      - /var/log:/var/log
+      - /etc/promtail:/etc/promtail
+      - ./logs:/var/log/app
+    command: -config.file=/etc/promtail/promtail-config.yml
+    restart: always
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    restart: always

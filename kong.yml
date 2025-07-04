@@ -1,0 +1,14 @@
+_format_version: "3.0"
+services:
+  - name: securebankapi
+    url: http://securebankapi:8000
+    routes:
+      - name: securebankapi-route
+        paths:
+          - /
+plugins:
+      - name: rate-limiting
+        config:
+          second: 5
+          minute: 10
+          policy: local

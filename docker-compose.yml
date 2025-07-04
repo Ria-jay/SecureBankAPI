@@ -1,0 +1,10 @@
+services:
+  securebankapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: securebankapi_container
+    ports:
+      - "8000:8000"
+#    volumes:
+#      - ./app:/app
